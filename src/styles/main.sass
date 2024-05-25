@@ -1,0 +1,232 @@
+.main-page-wrapper
+  width: 100%
+  height: 100vh
+  display: grid
+  grid-template-columns: 0px 440px 1fr
+  grid-template-rows: 60px 1fr 1fr
+  grid-template-areas: "aside nav nav" "aside chats chat" "aside chats chat"
+
+  .logout-button-container
+    position: absolute
+    bottom: 0px 
+    left: 200px
+    transform: translateX(-25%)
+    
+    .MuiButton-root 
+      font-size: 26px
+      color: #DE3A3A
+      
+  .chats-container
+    grid-area: chats
+    border: 1px solid #E5E5E5
+    border-top: none
+    display: flex
+    flex-direction: column
+
+    .bottom-panel
+      width: 100%
+      background: #FFFFFF
+      display: flex
+      flex-direction: column
+      border-bottom: 4px solid #E5E5E5
+      height: 150px
+
+      .search
+        width: 410px
+        margin-top: 70px
+        height: 45px
+        display: flex
+        position: absolute
+        background: #E9E7E7
+        border-radius: 10px
+
+        .text-search
+          top: 12px
+          left: 6.5px
+          color: rgba(34, 34, 34, 0.5)
+          width: 70px
+          height: auto
+          position: absolute
+          font-size: 20px
+          font-style: Regular
+          text-align: left
+          font-family: Roboto Serif
+          font-weight: 400
+          line-height: normal
+          font-stretch: normal
+          text-decoration: none
+
+      .chat-title
+        font-size: 30px
+        font-style: normal
+        font-family: Roboto Serif
+        font-stretch: normal
+        letter-spacing: 0em
+
+      .icon-redactor
+        margin-left: 190px
+
+      .icon-setting
+        margin-left: 10px
+
+      .chat-item
+        width: 100%
+        display: flex
+        padding: 12px
+        gap: 10px
+        cursor: pointer
+
+        .chat-image
+          width: 45px
+          height: 45px
+
+  .chat
+    grid-area: chat
+    background: #F7F7F7
+    display: flex
+    flex-direction: column
+
+    .top-panel
+      display: flex
+      position: fixed
+      top: 0
+      left: 0
+      width: 100%
+      height: 60px
+      align-items: center
+      justify-content: center
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.17)
+      background: #44D8D8
+      z-index: 3
+
+    .top-panel_content
+      display: flex
+      align-items: center
+
+    .left-container
+      display: flex
+      gap: 10px
+      align-items: center
+
+      h3
+        font-size: 24px
+        color: #ffffff
+
+    .center-panel
+      display: flex
+      flex: 1
+      background: #fff
+      flex-direction: column
+      padding: 20px
+      gap: 30px
+      overflow-y: auto
+
+      .self-message
+        display: flex
+        width: 100%
+        justify-content: flex-end
+
+        .error-icon
+          position: relative
+          top: 10px
+          right: 445px
+          font-size: 30px
+          color: red          
+
+        .message
+          display: flex
+          background: #DDF2F4
+          padding: 12px
+          border-radius: 20px 20px 0 20px
+          gap: 15px
+          font-size: 22px
+
+          &.error
+            background: #ff6666
+
+            .message-content, .message-send-time
+              color: #fff
+              left: 40px
+
+          .message-content
+            max-width: 400px
+
+          .message-send-time
+              color: #808B91
+              font-size: 20px
+              position: relative
+              top: 5px
+              display: flex
+              align-items: flex-end
+
+      .message-container
+        display: flex
+        gap: 10px
+
+        .avatar-container
+          display: flex
+          height: 100%
+          align-items: flex-start
+
+        .message-body
+          display: flex
+          flex-direction: column
+          align-items: flex-start
+          gap: 10px
+
+          .username
+            font-size: 22px
+            font-weight: bold
+
+          .error-icon
+            position: relative
+            top: 10px
+            left: 45px
+            font-size: 30px
+            color: red          
+
+          .message
+            display: flex
+            font-size: 22px
+            background: #F4F4F4
+            padding: 12px
+            gap: 25px
+            border-radius: 20px 20px 20px 0px
+
+            &.error
+              background: #ff6666
+
+              .message-content, .message-send-time
+                color: #fff
+                font-size: 22px
+                left: 45px
+
+            .message-content
+              font-size: 22px
+
+            .message-send-time
+              color: #808B91
+              font-size: 20px
+              position: relative
+              top: 5px
+              display: flex
+              align-items: flex-end
+
+    .bottom-panel
+      background: #fff
+      border-top: 2px solid #E5E5E5
+      display: flex
+      padding: 12px
+      gap: 10px
+
+      .message-input
+        outline: none
+        border: none
+        display: flex
+        flex: 1
+        color: #858E95
+        font-size: 22px
+
+        &::placeholder
+          color: #BBC0C4
+
