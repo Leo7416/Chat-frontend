@@ -93,10 +93,10 @@ const Chat = () => {
                 {messages.map((message: MessageType) => (
                     message.self ?
                         <div className="self-message" key={message.id}>
-                            <div className={"message " + (message.error ? "error" : "")}>
-                                <span className="message-content">{message.error ? "Сообщение пришло с ошибкой" : message.content}</span>
-                                <span className="message-send-time">{moment(message.time).format('HH:mm')}</span>
-                                {message.error && <MdError className="error-icon" />}
+                            <div className={"message " + (message.isError ? "error" : "")}>
+                                <span className="message-content">{message.isError ? "Сообщение пришло с ошибкой" : message.content}</span>
+                                <span className="message-send-time">{moment(message.datetime).format('HH:mm')}</span>
+                                {message.isError && <MdError className="error-icon" />}
                             </div>
                         </div>
                         :
@@ -106,10 +106,10 @@ const Chat = () => {
                             </div>
                             <div className="message-body">
                                 <span className="username">{message.user}</span>
-                                <div className={"message " + (message.error ? "error" : "")}>
-                                    <span className="message-content">{message.error ? "Сообщение пришло с ошибкой" : message.content}</span>
-                                    <span className="message-send-time">{moment(message.time).format('HH:mm')}</span>
-                                    {message.error && <MdError className="error-icon" />}
+                                <div className={"message " + (message.isError ? "error" : "")}>
+                                    <span className="message-content">{message.isError ? "Сообщение пришло с ошибкой" : message.content}</span>
+                                    <span className="message-send-time">{moment(message.datetime).format('HH:mm')}</span>
+                                    {message.isError && <MdError className="error-icon" />}
                                 </div>
                                 
                             </div>
